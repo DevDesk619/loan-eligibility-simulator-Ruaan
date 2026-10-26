@@ -80,7 +80,7 @@ export default function LoanApplicationForm({ values, errors, error, loading, di
         </section>
 
         <div className="form-actions"><button type="button" className="button-secondary" onClick={onReset} disabled={loading}>Reset form</button><button type="submit" className="button-primary" disabled={loading || disposableIncome < 0}>{loading ? "Calculating…" : "Check my eligibility"}<ArrowRight size={17} /></button></div>
-        <p className="form-disclaimer"><ShieldCheck size={14} /> Your information stays in this demo and is not saved by the app.</p>
+        <p className="form-disclaimer"><ShieldCheck size={14} /> Your information stays in this simulator and is not saved by the app.</p>
       </form>
     </div>
   );

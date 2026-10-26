@@ -30,7 +30,7 @@ export default function EligibilityResults({ result, loanTerm }: EligibilityResu
             <div className="payment-highlight"><span>Estimated monthly repayment</span><strong>{formatMoney(result.recommendedLoan.monthlyPayment)}</strong><small>For {loanTerm} months · {formatPercent(result.recommendedLoan.interestRate)} estimated annual interest</small></div>
             <div className="result-metrics"><MetricCard label="Possible loan amount" value={formatMoney(result.recommendedLoan.maxAmount)} icon="↗" /><MetricCard label="Total repayment" value={formatMoney(result.recommendedLoan.totalRepayment)} icon="⌁" /></div>
             <div className="affordability-box"><div><span className="affordability-label">AFFORDABILITY SNAPSHOT</span><span className={`score-pill score-${result.affordabilityAnalysis.affordabilityScore}`}>{result.affordabilityAnalysis.affordabilityScore}</span></div><div className="affordability-stat"><span>Disposable income</span><strong>{formatMoney(result.affordabilityAnalysis.disposableIncome)}</strong></div><div className="affordability-stat"><span>Debt-to-income ratio</span><strong>{formatPercent(result.affordabilityAnalysis.debtToIncomeRatio)}</strong></div><div className="affordability-stat"><span>Risk category</span><strong className="capitalize">{result.eligibilityResult.riskCategory}</strong></div></div>
-            <p className="result-footnote">Illustrative demo only — not a lending decision or guarantee of approval.</p>
+            <p className="result-footnote">Simulator only — not a lending decision or guarantee of approval.</p>
           </div>
         )}
       </div>

@@ -45,11 +45,11 @@ export async function checkEligibilityMock(values: LoanFormValues): Promise<Elig
   const affordabilityScore: EligibilityResponse["affordabilityAnalysis"]["affordabilityScore"] =
     hasDisposableIncome && debtToIncomeRatio < 30 ? "good" : disposableIncome > 0 ? "fair" : "poor";
 
-  let decisionReason = "Your income and expenses indicate that the requested repayment may be manageable in this demo.";
+  let decisionReason = "Your income and expenses indicate that the requested repayment may be manageable in this simulator.";
   if (!hasMinimumIncome) decisionReason = "The monthly income entered is below the illustrative minimum of R5,000.";
   else if (!withinLoanLimit) decisionReason = `The requested amount is outside the illustrative limits for this ${values.loanType === "vehicle_loan" ? "vehicle" : "personal"} loan.`;
   else if (!hasDisposableIncome) decisionReason = "Your estimated disposable income may not comfortably cover the monthly repayment.";
-  else if (riskCategory === "low") decisionReason = "Your income, credit score and existing debt indicate a comparatively strong profile in this demo.";
+  else if (riskCategory === "low") decisionReason = "Your income, credit score and existing debt indicate a comparatively strong profile in this simulator.";
 
   const affordableMonthlyBudget = Math.max(0, disposableIncome / 1.15);
   const maxAmount = Math.max(0, Math.min(amountLimit, Math.round(calculateAffordablePrincipal(affordableMonthlyBudget, interestRate, values.loanTerm))));
