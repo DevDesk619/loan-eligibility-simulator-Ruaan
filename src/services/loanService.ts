@@ -17,7 +17,7 @@ async function initialiseMockApi(): Promise<void> {
 export function toEligibilityRequest(values: LoanFormValues): EligibilityRequest {
   return {
     personalInfo: { age: values.age, employmentStatus: values.employmentStatus, employmentDuration: values.employmentDuration },
-    financialInfo: { monthlyIncome: values.monthlyIncome, monthlyExpenses: values.monthlyExpenses, existingDebt: values.existingDebt, creditScore: values.creditScore },
+    financialInfo: { monthlyIncome: Number(values.monthlyIncome), monthlyExpenses: Number(values.monthlyExpenses), existingDebt: Number(values.existingDebt), creditScore: values.creditScore },
     loanDetails: { requestedAmount: values.requestedAmount, loanTerm: values.loanTerm, loanPurpose: values.loanPurpose, loanType: values.loanType },
   };
 }
